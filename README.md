@@ -9,6 +9,8 @@ FYSETC-PT100Stick is a Pololu formfactor MAX31865 breakboard for FYSETC S6/Spide
 
 Then insert it to the socket.
 
+![](images/insertion.jpg)
+
 ### Klipper
 
 1. SSH into your `RaspberryPi` and edit your `printer.cfg` file using `nano`.
