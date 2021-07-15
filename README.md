@@ -19,7 +19,7 @@ Then insert it to the socket.
 
    ```
    sensor_type: MAX31865
-   sensor_pin: PD11 # i pulg into E4-MOT socket, `cs` pin is the sensor pin
+   sensor_pin: PD11 # I pulg into Spider E4-MOT socket, `cs` pin is the sensor pin
    spi_speed: 4000000
    spi_software_sclk_pin: PE12
    spi_software_mosi_pin: PE14
