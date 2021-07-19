@@ -47,3 +47,43 @@ Then insert it to the socket.
 
 ### Marlin
 
+#### Step 1: Change pins file
+
+Add the follow lines to `pins_FYSETC_SPIDER.h` before `#endif` line.
+
+```
+#define Thermo_SCK_PIN           PE12//SCK
+#define Thermo_do_PIN            PE13//MISO
+#define Thermo_CS1_PIN           PD11//CS1 E4_CS_PIN
+#define Thermo_CS2_PIN           -1//CS2
+#define MAX31865_MOSI_PIN        PE14
+
+#define MAX6675_SS_PIN           Thermo_CS1_PIN
+#define MAX6675_SS2_PIN          Thermo_CS2_PIN
+#define MAX6675_SCK_PIN          Thermo_SCK_PIN
+#define MAX6675_DO_PIN           Thermo_do_PIN  
+```
+
+You need to change `Thermo_CS1_PIN` to related `cs` if you insert `PT100Stick` to other stepper driver socket.
+
+| CS        | pin  |
+| --------- | ---- |
+| X-CS/PDN  | PE7  |
+| Y-CS/PDN  | PE15 |
+| Z-CS/PDN  | PD10 |
+| E0-CS/PDN | PD7  |
+| E1-CS/PDN | PC14 |
+| E2-CS/PDN | PC15 |
+| E3-CS/PDN | PA15 |
+| E4-CS/PDN | PD11 |
+
+#### Step 2:  Change `configuration.h` file
+
+```
+#define TEMP_SENSOR_0 -5
+```
+
+```
+#define MAX31865_SENSOR_OHMS_0      100   // (Ω) Typically 100 or 1000 (PT100 or PT1000)
+#define MAX31865_CALIBRATION_OHMS_0 430   // (Ω) Typically 430 for AdaFruit PT100; 4300 for AdaFruit PT1000
+```
