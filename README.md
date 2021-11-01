@@ -11,7 +11,9 @@ Then insert it to the socket.
 
 ![](images/insertion.jpg)
 
-### 1.2 Klipper
+### 1.2 Firmware setting
+
+#### 1.2.1 Klipper firmware
 
 1. SSH into your `RaspberryPi` and edit your `printer.cfg` file using `nano`.
 
@@ -45,9 +47,9 @@ Then insert it to the socket.
    5. This will run for a few minutes. When finished, save with: "SAVE_CONFIG"
    ```
 
-### 1.3 Marlin
+#### 1.2.2 Marlin firmware
 
-#### Step 1: Change pins file
+##### Step 1: Change pins file
 
 Add the follow lines to `pins_FYSETC_SPIDER.h` before `#endif` line.
 
@@ -77,7 +79,7 @@ You need to change `Thermo_CS1_PIN` to related `cs` if you insert `PT100Stick` t
 | E3-CS/PDN | PA15 |
 | E4-CS/PDN | PD11 |
 
-#### Step 2:  Change `configuration.h` file
+##### Step 2:  Change `configuration.h` file
 
 ```
 #define TEMP_SENSOR_0 -5
